@@ -268,10 +268,12 @@ implements View.OnClickListener {
             GameUser user = new GameUser();
             user.setName(inputResult);
             long rowID = db.insertGameUser(user);
+            // returns 1 on success and -1 on fail
             if(rowID != -1) {
                 Toast.makeText(getBaseContext(), "New Player " + inputResult +
                         " \nWas Added to Database", Toast.LENGTH_SHORT).show();
             }else{
+                // if not added
                 Toast.makeText(getBaseContext(), R.string.user_not_added, Toast.LENGTH_SHORT).show();
             }
         }
